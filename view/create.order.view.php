@@ -26,7 +26,8 @@
         <label for="product">
             <select name="product" id="product">
                 <option value="tee-shirt Mario">Tee-shirt Mario</option>
-                <option value="tee-shirt Wario">Tee-shirt Wario</option>
+                <option value="tee-shirt Gta">Tee-shirt GTA</option>
+                <option value="tee-shirt Elden Ring">Tee-shirt GTA</option>
             </select>
         </label>
 
