@@ -2,6 +2,9 @@
 //ca fait appelle a la page pour afficher les erreurs 
 require_once("../config.php") ;
 
+//démarrage de la session
+session_start() ;
+
 // message au chargement de la page (base)
 $message = "";
 
@@ -20,3 +23,6 @@ if (array_key_exists("quantity", $_POST) &&
 
     //ca fait appelle a la pages view (html) si besoin 
     require_once("../view/create.order.view.php");
+  
+
+?>
