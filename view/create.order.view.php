@@ -19,7 +19,7 @@
 
         <!--texte pour mettre la quantité que l'on veut -->
         <label for="quantity">quantité
-            <input type="number" name="quantity" placeholder="Enter your quantity here..." id="quantity">
+            <input type="number" name="quantity" placeholder="Quantité souhaité..." id="quantity">
         </label>
 
         <!-- selection pour dsélectionner un produit -->
