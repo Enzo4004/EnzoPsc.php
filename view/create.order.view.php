@@ -4,9 +4,9 @@
 <section>
 
 <!-- Création formulaire -->
-    <form action="">
+    <form action="*">
 
-    <!-- Champ de type texte pour mettre la quantité que l'on veut -->
+    <!-- Champ texte pour mettre la quantité que l'on veut -->
         <label for="quantity">quantity
             <input type="text" name="quantity" placeholder="Enter your quantity here..." id="quantity">
         </label>
