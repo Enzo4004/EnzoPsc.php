@@ -17,24 +17,24 @@
     <!-- Création d'un formulaire -->
     <form method="post">
 
-        <!-- Champ de type texte pour mettre la quantité que l'on veut -->
+        <!--texte pour mettre la quantité que l'on veut -->
         <label for="quantity">quantité
             <input type="number" name="quantity" placeholder="Enter your quantity here..." id="quantity">
         </label>
 
-        <!-- Champ de type selection pour dsélectionner un produit -->
+        <!-- selection pour dsélectionner un produit -->
         <label for="product">
             <select name="product" id="product">
                 <option value="tee-shirt Mario">Tee-shirt Mario</option>
                 <option value="tee-shirt Gta">Tee-shirt GTA</option>
-                <option value="tee-shirt Elden Ring">Tee-shirt GTA</option>
+                <option value="tee-shirt Elden Ring">Tee-shirt Elden Ring</option>
             </select>
         </label>
 
         <button type="submit">Envoyer la commande</button>
     </form>
 
-    <!-- Utilisation de la variable $message du controller de ce fichier -->
+    <!-- Utilisation de la variable $message du controllers -->
     <h3><?php echo $message ?></h3>
 
 </section>
