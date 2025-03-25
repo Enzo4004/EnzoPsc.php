@@ -13,12 +13,12 @@
 
 <section>
 
-    <h2>Create a command</h2>
+    <h2>Crée ta commande </h2>
     <!-- Création d'un formulaire -->
     <form method="post">
 
         <!-- Champ de type texte pour mettre la quantité que l'on veut -->
-        <label for="quantity">Quantity
+        <label for="quantity">quantité
             <input type="number" name="quantity" placeholder="Enter your quantity here..." id="quantity">
         </label>
 
@@ -30,7 +30,7 @@
             </select>
         </label>
 
-        <button type="submit">Send Order</button>
+        <button type="submit">Envoyer la commande</button>
     </form>
 
     <!-- Utilisation de la variable $message du controller de ce fichier -->
