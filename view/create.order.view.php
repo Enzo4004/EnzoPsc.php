@@ -1,49 +1,50 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formulaire</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
 <body>
 
+	<header>
 
-<!-- Importation du header -->
-<?php require_once('../partial/header.php'); ?>
+		<nav>
+			<ul>
+				<li>Créer une commande</li>
+			</ul>
+		</nav>
 
-<section>
+	</header>
 
-    <h2>Crée ta commande </h2>
-    <!-- Création d'un formulaire -->
-    <form method="post">
 
-        <!--texte pour mettre la quantité que l'on veut -->
-        <label for="quantity">quantité
-            <input type="number" name="quantity" placeholder="Quantité souhaité..." id="quantity">
-        </label>
+	<main>
 
-        <!-- selection pour dsélectionner un produit -->
-        <label for="product">
-            <select name="product" id="product">
-                <option value="tee-shirt Mario">Tee-shirt Mario</option>
-                <option value="tee-shirt Gta">Tee-shirt GTA</option>
-                <option value="tee-shirt Elden Ring">Tee-shirt Elden Ring</option>
-            </select>
-        </label>
+	<p><?php echo $message; ?></p>
 
-        <button type="submit">Envoyer la commande</button>
-    </form>
+		<?php if ($orderByUser) {?>
+			<p>Vous avez une commande en attente : <?php echo $orderByUser['product']; ?> <?php echo $orderByUser['quantity']; ?>
+		<?php } ?>
 
-    <!-- Utilisation de la variable $message du controllers -->
-    <h3><?php echo $message ?></h3>
+		<form method="POST" >
 
-</section>
+			<label for="quantity">Quantity
+				<input type="number" name="quantity" />
+			</label>
 
-</main>
-</body>
+			<label for="product">
+				<select name="product">
+					<?php foreach ($products as $product) { ?>
+						<option value="<?php echo $product; ?>"><?php echo $product; ?></option>
+					<?php } ?>
+				</select>
+			</label>
 
-</html>
+			<button type="submit">Créer la commande</button>
 
-</main>
+		</form>
+
+	</main>
+
 </body>
 </html>

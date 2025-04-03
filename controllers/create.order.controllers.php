@@ -1,53 +1,33 @@
-<?php 
-//ca fait appelle a la page pour afficher les erreurs 
-require_once("../config.php") ;
+<?php
 
-//démarrage de la session
-session_start() ;
+require_once('../config.php');
+require_once('../model/product.repository.php');
+require_once('../model/order.repository.php');
 
-// Vérification si le formulaire est soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-    // Récupération des données du formulaire
-    $quantity = isset($_POST['quantity']);
-    $product = isset($_POST['product']) ;
+session_start();
 
-    // Création du tableau $order
-    $order = [
-        'quantity' => $quantity,
-        'product' => $product,
-    ];
-
-    // Initialisation du panier dans la session s'il n'existe pas
-    if (!isset($_SESSION['orders'])) {
-        $_SESSION['orders'] = [];
-    }
-
-    // Ajout de la commande au panier
-    $_SESSION['orders'][] = $order;
-
-    echo "Commande ajoutée avec succès !";
-}
-
-
-// message au chargement de la page (base)
 $message = "";
 
-// condition qui vérifie l'envoi des valeurs dans le formulaire
 if (array_key_exists("quantity", $_POST) && 
 	array_key_exists("product", $_POST))
 {
-    // stockage des valeurs envoyées
-	$product = $_POST["product"];
-	$quantity = $_POST["quantity"];
+	$order = createOrder($_POST['product'], $_POST['quantity']);
 
-    // message à afficher avec les valeurs enregistrées
-	$message = "Votre commande contient : " .  $quantity . " " . $product . "!";
+	if ($order) {
+		saveOrder($order);
+	} else {
+		$message = "impossible de créer la commande";
+	}
+
 }
 
+$orderByUser = findOrderByUser();
 
-    //ca fait appelle a la pages view (html) si besoin 
-    require_once("../view/create.order.view.php");
-  
+require_once('../view/create.order.view.php');
 
-?>
+// le controleur : 
+
+// récupère les données de requête (GET, POST etc etc)
+// appelle le(s) répository pour récupérer / stocker des données (bdd, session)
+// créé des variables / fonctions etc, pour simplifier l'utilisation des données dans la view
+// renvoie une réponse contenant le HTML généré par la view
