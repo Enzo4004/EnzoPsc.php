@@ -1,31 +1,34 @@
-<?php
+<?php 
 
+function createOrder() {
+        if ($_POST['quantity'] > 0 && $_POST['quantity'] <= 3) {
+            $order=[
+                "quantity" => $_POST['quantity'] , // récupère la valeur de la quantité dans l'input quantity une fois le formulaire soumis
+                "teeshirt" => $_POST['teeshirt'], // recupère la valeur du modèle de t-shirt dans le select teeshirt une fois le formulaire soumis
+                "created_at" => date('Y-m-d H:i:s') // Ajoute la date et l'heure actuelles
+            ] ; 
 
-//SELECT * FROM order where user.id = $id
-function findOrderByUser() {
-	if (array_key_exists("order", $_SESSION)) {
-		return $_SESSION["order"];
-	} else {
-		return null;
-	}
-}
+            return $order;
+        }
 
-function createOrder($product, $quantity) {
+        else {
+            return false;
+        }
+    }
 
-	if ($quantity < 0 || $quantity > 3) {
-		return false;
-	} else {
-		$order = [
-			"product" => $product,
-			"quantity" => $quantity
-		];
-	
-		return $order;
-	}
-}
-
-
-// INSERT INTO order values ($order['product'], $order['quantity'])
 function saveOrder($order) {
-	$_SESSION["order"] = $order;
+    if ($order){
+    $_SESSION['order'] = $order; // permet de récupérer le tableau $order avec la super globale $_SESSION. L'information reste disponible tant que les cookies ne sont pas supprimées ou qu'une nouvelle commande n'est pas réalisée. En l'état n'affiche que la dernière commande réalisée/en attente.
+    }
 }
+
+function findOrderByUser() {
+    if (isset($_SESSION['order'])) {
+        return $_SESSION['order'];
+    }
+    else {
+        return null;
+    }
+}
+
+?>
