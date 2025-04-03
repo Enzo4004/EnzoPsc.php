@@ -32,16 +32,16 @@ $message = "";
         }else{ // sinon $message devient "impossible de creer la commande
             $message = "impossible de créé la commande";
         }
-
+//saveOrder est une function qui permet de sauvegarder la valeur $orde
         saveOrder($order);
-    } //saveOrder est une function qui permet de sauvegarder la valeur $order créé ci-dessu
+    } 
 
+
+	// je donne une valeur au resultat de ma fonction findOrderByUser
 $orderByUser = findOrderByUser();
-// je donne une valeur au resultat de ma fonction findOrderByUser
+
    
-
+//on vient requpéré le fichier dont on a besoin
 require_once('../model/product.repository.php');
-
-//on vient requpéré le fichier view
 
 require_once '../view/create.order.view.php';
