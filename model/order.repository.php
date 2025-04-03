@@ -1,34 +1,37 @@
-<?php 
+<?php
 
-function createOrder() {
-        if ($_POST['quantity'] > 0 && $_POST['quantity'] <= 3) {
-            $order=[
-                "quantity" => $_POST['quantity'] , // récupère la valeur de la quantité dans l'input quantity une fois le formulaire soumis
-                "teeshirt" => $_POST['teeshirt'], // recupère la valeur du modèle de t-shirt dans le select teeshirt une fois le formulaire soumis
-                "created_at" => date('Y-m-d H:i:s') // Ajoute la date et l'heure actuelles
-            ] ; 
 
-            return $order;
-        }
-
-        else {
-            return false;
-        }
-    }
-
-function saveOrder($order) {
-    if ($order){
-    $_SESSION['order'] = $order; // permet de récupérer le tableau $order avec la super globale $_SESSION. L'information reste disponible tant que les cookies ne sont pas supprimées ou qu'une nouvelle commande n'est pas réalisée. En l'état n'affiche que la dernière commande réalisée/en attente.
-    }
-}
-
+//SELECT * FROM order where user.id = $id
 function findOrderByUser() {
-    if (isset($_SESSION['order'])) {
-        return $_SESSION['order'];
-    }
-    else {
-        return null;
-    }
+	if (array_key_exists("order", $_SESSION)) {
+		return $_SESSION["order"];
+	} else {
+		return null;
+	}
 }
 
-?>
+// vérifie que la commande a le droit d'être créée
+// créé la commande
+function createOrder($product, $quantity) {
+
+	if ($quantity < 0) {
+		throw new Exception("Interdiction de mettre une quantité inférieure à 0");
+	} else if ($quantity > 3){
+		throw new Exception("Interdication de mettre quantité supérieur à 3");
+		
+	} else {
+		$order = [
+			"product" => $product,
+			"quantity" => $quantity,
+			"createdAt" => new DateTime()
+		];
+	
+		return $order;
+	}
+}
+
+
+// INSERT INTO order values ($order['product'], $order['quantity'])
+function saveOrder($order) {
+	$_SESSION["order"] = $order;
+}

@@ -5,5 +5,7 @@ $products = [
 	"Teeshirt Mario",
 	"Teeshirt Hello Kitty",
 	"Teeshirt GTA",
-	"Teeshirt Mathieu Rozand"
+	"Teeshirt Mathieu Rozand",
+	"Teeshirt GAMEMIXTREIZE"
+
 ];
