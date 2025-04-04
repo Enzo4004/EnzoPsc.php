@@ -12,8 +12,8 @@
 
     <nav>
         <ul>
-            <li><a href="#">Accueil de creations</a></li>
-            <li><a href="create-order-controller.php">Crée ta commande</a></li>
+            <li>Accueil de creations</li>
+            <li><a href="http://localhost/commerce.tshirt.php/controllers/create.order.controllers.php">Crée ta commande</a></li>
         </ul>
     </nav>
 

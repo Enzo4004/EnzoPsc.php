@@ -54,10 +54,11 @@
 
 		</form>
 
-		<a href="pay.order.controllers.php"><button> Afficher la commande</button></a>
+		<a href="http://localhost/commerce.tshirt.php/controllers/pay.order.controllers.php"><button> Afficher la
+				commande</button></a>
 
 	</main>
-
+			<?php require_once('../partial/header.php'); ?>
 </body>
 
 </html>
