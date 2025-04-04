@@ -43,9 +43,9 @@
  			<p>Vous n'avez pas de commande à payer</p>
  		<?php } ?>
          
-        <!-- Inclusion du header ) -->
+        <!-- Inclusion du header et du bouton annuler la commandes ) -->
          <?php require_once('../view/partial/header.php'); ?>
- 		
+ 		<?php require_once('../view/view.cancelled.view.php');?>
  		
  
  	</main>
