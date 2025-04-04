@@ -31,8 +31,13 @@
  			<p>Votre commande est en statut :<?php echo $orderByUser['status']; ?> </p>
             
             <!-- Bouton permettant de payer la commande -->
- 			<button>Payer</button>
- 		<?php } else { ?>
+			
+			<form method="post">
+ 				<button type="submit">Payer</button>
+ 			
+			</form>
+ 		
+			<?php } else { ?>
             <!-- Message affiché si aucune commande n’est trouvée pour l’utilisateur -->
  			<p>Vous n'avez pas de commande à payer</p>
  		<?php } ?>
