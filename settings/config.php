@@ -1,5 +1,5 @@
 <?php
-// Les messages d'erreur 
+// Les messages d'erreur précis
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
