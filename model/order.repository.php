@@ -18,12 +18,14 @@ function createOrder($product, $quantity) {
 		throw new Exception("Interdiction de mettre une quantité inférieure à 0");
 	} else if ($quantity > 3){
 		throw new Exception("Interdication de mettre quantité supérieur à 3");
-		
+
 	} else {
+
 		$order = [
 			"product" => $product,
 			"quantity" => $quantity,
-			"createdAt" => new DateTime()
+			"createdAt" => new DateTime(),
+			"status" => "CART"
 		];
 	
 		return $order;
