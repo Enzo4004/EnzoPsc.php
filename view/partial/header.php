@@ -12,7 +12,7 @@
 
     <nav>
         <ul>
-            <li>Accueil de creations</li>
+            
             <li><a href="http://localhost/commerce.tshirt.php/controllers/create.order.controllers.php">Crée ta commande</a></li>
         </ul>
     </nav>

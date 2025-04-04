@@ -58,7 +58,7 @@
 				commande</button></a>
 
 	</main>
-			<?php require_once('../partial/header.php'); ?>
+			
 </body>
 
 </html>
