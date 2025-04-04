@@ -21,7 +21,7 @@
  
  	<main>
  	
- 		<h1>Payer une commande</h1>
+ 		<a href="create.order.controllers.php"><h1>Payer une commande</h1></a>
  
  		<?php if ($orderByUser) {?>
  			<p> <?php echo $orderByUser['product']; ?> :  <?php echo $orderByUser['quantity']; ?>

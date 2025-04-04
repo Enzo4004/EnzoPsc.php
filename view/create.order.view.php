@@ -54,6 +54,8 @@
 
 		</form>
 
+		<a href="pay.order.controllers.php"><button> Afficher la commande</button></a>
+
 	</main>
 
 </body>
