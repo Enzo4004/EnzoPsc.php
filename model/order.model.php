@@ -21,11 +21,12 @@ class Order {
 
 // je créé un objet, qui aura toutes les propriétés définies dans la classe.
 // pour l'instant ces propriétés sont vides, mais je peux les définir
+// cela s'appelle une instance de classe 
 $order = new Order();
 
 // remplir les valeurs de chacune des propriétés
-$order->product = "Teeshirt Mario";
-$order->quantity = 1;
+$order->product = "Teeshirt REYMISTERIO";
+$order->quantity = 5;
 $order->createdAt = new DateTime();
 $order->status = "Cart";
 
